@@ -35,16 +35,19 @@ npm run build
 		- [popup 弹框组件](#popup)
 
 <div id="framework"></div>
+
 ## framework 框架
 
 布局框架
 
 <div id="phone"></div>
+
 ### phone
 
 提供移动端框架
 
 <div id="LeftSlideMenu"></div>
+
 #### LeftSlideMenu.vue
 
 左侧滑动菜单
@@ -135,11 +138,13 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 ```
 
 <div id="tools"></div>
+
 ## tools
 
 工具组件
 
 <div id="popup"></div>
+
 ### popup
 
 弹框组件
@@ -147,6 +152,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 #### 使用方法
 
 导入 popup
+
 ```javascript
 	import {
 		MessageBox,
@@ -196,7 +202,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 
 # js 资源
 
-`client_framework/src/library`
+`vue_framework/src/library`
 
 - js目录
 	- [dataSource 数据加载](#dataSource)
@@ -216,6 +222,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 		- [wangpos jsSDK](#wangpos)
 
 <div id="dataSource"></div>
+
 ## dataSource
 
 提供数据加载的配置
@@ -270,6 +277,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 ```
 	
 <div id="paging"></div>
+
 ## paging
 
 导入
@@ -322,12 +330,15 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 ```
 
 <div id="directive"></div>
+
 ## directive
+
 指令
 
 > 参考Vue指令,指令基本都是全局的引用
 
 <div id="barCode"></div>
+
 ### barCode
 
 #### 使用方法
@@ -359,6 +370,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 ```
 
 <div id="citySelect"></div>
+
 ### citySelect
 
 #### 使用方法
@@ -394,10 +406,12 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 ```
 
 <div id="filter"></div>
+
 ## filter
 > Vue 过滤器
 
 <div id="city"></div>
+
 ### city
 
 geoId 转换 省市,双向过滤
@@ -407,15 +421,19 @@ geoId 转换 省市,双向过滤
 ```
 
 <div id="curreny"></div>
+
 ### curreny
+
 转换保留两位小数, 双向过滤
 ```html
 	<span>{{288 | currencyDisplay}}</span>
 ```
 
 <div id="date"></div>
+
 ### date
 参数为转换的格式
+
 1. date 
 	
 	```html
@@ -430,6 +448,7 @@ geoId 转换 省市,双向过滤
 	```
 	
 <div id="gender"></div>
+
 ### gender
 
 性别转换,1 -> 男, 其他 -> 女
@@ -439,6 +458,7 @@ geoId 转换 省市,双向过滤
 ```
 
 <div id="language"></div>
+
 ### language
 
 语言现实转换,en -> 英文, 其他 -> 中文
@@ -448,9 +468,12 @@ geoId 转换 省市,双向过滤
 ```
 
 <div id="sdk"></div>
-#SDK
+
+# SDK
 第三方设备相关
+
 <div id="wangpos"></div>
+
 ## wangpos 
 
 #### 使用说明
