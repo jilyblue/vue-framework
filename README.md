@@ -215,8 +215,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	- [SDK SDK工具](#sdk)
 		- [wangpos jsSDK](#wangpos)
 
-<div id="dataSource"><div>
-
+<div id="dataSource"></div>
 ## dataSource
 
 提供数据加载的配置
@@ -270,7 +269,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	});
 ```
 	
-<div id="paging"><div>
+<div id="paging"></div>
 ## paging
 
 导入
@@ -322,13 +321,13 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	paging.next()
 ```
 
-<div id="directive"><div>
+<div id="directive"></div>
 ## directive
 指令
 
 > 参考Vue指令,指令基本都是全局的引用
 
-<div id="barCode"><div>
+<div id="barCode"></div>
 ### barCode
 
 #### 使用方法
@@ -359,7 +358,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	<div v-bar-code.val="888888"></div>
 ```
 
-<div id="citySelect"><div>
+<div id="citySelect"></div>
 ### citySelect
 
 #### 使用方法
@@ -370,7 +369,7 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	<input v-city-scroll type="text" placeholder="点击选择城市" readonly="" />
 ```
 
-<div id="mobiscroll"><div>
+<div id="mobiscroll"></div>
 
 ### mobiscroll
 
@@ -394,11 +393,11 @@ LeftSlideMenu需要提供一个配置 option 和一个展示内容的 slot, slol
 	<input type="text"  v-date-scroll="date" placeholder="点击选择日期" readonly="" />
 ```
 
-<div id="filter"><div>
+<div id="filter"></div>
 ## filter
 > Vue 过滤器
 
-<div id="city"><div>
+<div id="city"></div>
 ### city
 
 geoId 转换 省市,双向过滤
@@ -407,14 +406,14 @@ geoId 转换 省市,双向过滤
 	<span>{{geoId | city}}</span>
 ```
 
-<div id="curreny"><div>
+<div id="curreny"></div>
 ### curreny
 转换保留两位小数, 双向过滤
 ```html
 	<span>{{288 | currencyDisplay}}</span>
 ```
 
-<div id="date"><div>
+<div id="date"></div>
 ### date
 参数为转换的格式
 1. date 
@@ -430,7 +429,7 @@ geoId 转换 省市,双向过滤
 		<span>{{'19990811' | date 'yyyy-mm-dd'}}</span>
 	```
 	
-<div id="gender"><div>
+<div id="gender"></div>
 ### gender
 
 性别转换,1 -> 男, 其他 -> 女
@@ -439,7 +438,7 @@ geoId 转换 省市,双向过滤
 	<span>{{1 | gender}}</span>
 ```
 
-<div id="language"><div>
+<div id="language"></div>
 ### language
 
 语言现实转换,en -> 英文, 其他 -> 中文
@@ -448,10 +447,10 @@ geoId 转换 省市,双向过滤
 	<span>{{1 | language}}</span>
 ```
 
-<div id="sdk"><div>
+<div id="sdk"></div>
 #SDK
 第三方设备相关
-<div id="wangpos"><div>
+<div id="wangpos"></div>
 ## wangpos 
 
 #### 使用说明
