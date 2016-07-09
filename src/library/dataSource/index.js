@@ -9,17 +9,21 @@ let urlList = {};
 let cacheObject = {};
 let beforeList = [];
 let afterList = [];
-function beforeListStart(){
+
+function beforeListStart() {
 	runFnList(beforeList);
 }
-function afterListStart(data){
+
+function afterListStart(data) {
 	runFnList(afterList, data);
 }
-function runFnList(list, data){
-	for(let i = 0; i < list.length; i++){
+
+function runFnList(list, data) {
+	for (let i = 0; i < list.length; i++) {
 		list[i](data);
 	}
 }
+
 function getByCache({
 	key,
 	params
@@ -92,14 +96,24 @@ function getData({
 			return;
 		}
 		let isTest = value.isTest;
+		let withCredentials = !isTest;
 		let url = value.allUrl ? value.allUrl : (isTest ? test : build) + value.url;
+		if (typeof WITHCREDENTIALSTYPE !== 'undefined') {
+			if (WITHCREDENTIALSTYPE == 'CLOSE') {
+				withCredentials = false;
+			} else if (WITHCREDENTIALSTYPE == 'OPEN') {
+				withCredentials = true;
+			}
+		}
 		Vue.http[value.type](url, params, {
-			xhr : {withCredentials: !isTest}
+			xhr: {
+				withCredentials: withCredentials
+			}
 		}).then(function(response) {
-			if(response.data.code == '200'){
+			if (response.data.code == '200') {
 				setByCache(key, params, response.data);
 				fn && fn(response.data);
-			}else{
+			} else {
 				fn2 && fn2(response.data);
 			}
 			afterListStart(response.data);
@@ -109,27 +123,37 @@ function getData({
 		});
 	}
 }
-let getDataSource = function getDataSource(key, params, fn, fn2){
-	if(typeof params === 'function'){
+let getDataSource = function getDataSource(key, params, fn, fn2) {
+	if (typeof params === 'function') {
 		fn2 = fn;
 		fn = params;
 		params = {};
 	}
-	var option = {key, params, fn, fn2};
+	var option = {
+		key,
+		params,
+		fn,
+		fn2
+	};
 	option.byCache = true;
 	getData(option);
 }
-getDataSource.getNew = function(key, params, fn, fn2){
-	if(typeof params === 'function'){
+getDataSource.getNew = function(key, params, fn, fn2) {
+	if (typeof params === 'function') {
 		fn2 = fn;
 		fn = params;
 		params = {};
 	}
-	var option = {key, params, fn, fn2};
+	var option = {
+		key,
+		params,
+		fn,
+		fn2
+	};
 	option.byCache = false;
 	getData(option);
 }
-getDataSource.init = function(urlL, buildUrl, testUrl){
+getDataSource.init = function(urlL, buildUrl, testUrl) {
 	let all = {
 		isTest: false,
 		cacheCount: 0,
@@ -137,7 +161,7 @@ getDataSource.init = function(urlL, buildUrl, testUrl){
 		type: 'post'
 	};
 	for (let key in urlL) {
-		for(let oKey in all){
+		for (let oKey in all) {
 			urlL[key][oKey] ? '' : urlL[key][oKey] = all[oKey];
 		}
 		urlList[key] = urlL[key];
@@ -145,13 +169,13 @@ getDataSource.init = function(urlL, buildUrl, testUrl){
 	build = buildUrl;
 	test = testUrl;
 }
-getDataSource.before = function(fn){
+getDataSource.before = function(fn) {
 	fn && beforeList.push(fn);
 }
-getDataSource.after = function(fn){
-	fn && afterList.push(fn);
-}
-/**
- *  data,fn,fn2 可选
- */
+getDataSource.after = function(fn) {
+		fn && afterList.push(fn);
+	}
+	/**
+	 *  data,fn,fn2 可选
+	 */
 export default getDataSource
