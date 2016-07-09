@@ -79,6 +79,7 @@
 </script>
 
 <style lang="scss" scoped>
+	@import "../../../../../../src/index";
 	$color: #006600 !default;
 	$topColor: #2cb300 !default;
 	$titleHight: 60px !default;
