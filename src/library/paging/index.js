@@ -43,8 +43,14 @@ function getData(page, pageNo) {
 	page.option.params.pageNo = pageNo || page.option.pageNo;
 	page.option.params.pageSize = page.option.pageSize;
 	page.option.dataSource(page.option.urlKey, page.option.params, function(data) {
-		if (data.data.length < page.option.pageSize) {
-			page.hasNext = false;
+		if (page.option.dataFrom) {
+			if (data.data[page.option.dataFrom].length < page.option.pageSize) {
+				page.hasNext = false;
+			}
+		} else {
+			if (data.data.length < page.option.pageSize) {
+				page.hasNext = false;
+			}
 		}
 		page.dataList = page.dataList.concat(page.option.dataFrom ? data.data[page.option.dataFrom] : data.data);
 		page.data = data.data;
